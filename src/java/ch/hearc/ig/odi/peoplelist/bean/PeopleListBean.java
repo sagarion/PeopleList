@@ -7,6 +7,7 @@ package ch.hearc.ig.odi.peoplelist.bean;
 
 import ch.hearc.ig.odi.peoplelist.service.Services;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -30,6 +31,11 @@ public class PeopleListBean implements Serializable{
     
     public List getPeopleList(){
         return services.getPeopleList();
+    }
+    
+    public void getPeopleListsavePerson(String gender, String firstName, String lastName, Boolean married, Date birthDate){
+        services.savePerson(gender, firstName, lastName, married, birthDate);
+        
     }
     
 }

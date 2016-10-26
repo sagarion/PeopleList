@@ -14,31 +14,32 @@
         <h:form id="formPerson">
 
             <h:outputText value="firstName" />
-            <h:inputText value="#{person.firstName}" />
+            <h:inputText value="#{peopleAdd.firstName}" />
             <br /><br /> 
 
             <h:outputText value="lastName" />
-            <h:inputText value="#{person.lastName}" />
+            <h:inputText value="#{peopleAdd.lastName}" />
             <br /><br /> 
 
             <h:outputText value="gender" />
-            <h:selectOneRadio value="#{person.gender}">
+            <h:selectOneRadio value="#{peopleAdd.gender}">
                 <f:selectItem itemValue="Male" itemLabel="Male" />
                 <f:selectItem itemValue="Female" itemLabel="Female" />	   			
             </h:selectOneRadio>
             <br /><br /> 
 
             <h:outputText value="married" />
-            <h:selectBooleanCheckbox value="#{person.maried}" />
+            <h:selectBooleanCheckbox value="#{peopleAdd.married}" />
             <br /><br /> 
 
             <h:outputText value="birthDate" />
-            <h:inputText id="date" value="#{person.birthDate}">
-                <f:convertDateTime pattern="d-M-yyyy" />
+            <h:inputText id="date" value="#{peopleAdd.birthDate}">
+                <f:convertDateTime pattern="dd.mm.yyyy" />
             </h:inputText>
             <br /><br /> 
 
-            <h:commandButton value="Ajouter" action="#{person.savePerson()}" />
+            <h:commandButton value="Ajouter" action="#{peopleAdd.addPerson()}" />
+            
         </h:form>
     </h:body>
 </html>
