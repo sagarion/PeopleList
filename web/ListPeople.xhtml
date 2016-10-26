@@ -3,10 +3,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
-        <title>List People</title>
+        <title>#{msg.titleList}</title>
     </h:head>
     <h:body>
-        <h:outputText value="Liste People" />
+        <h:outputText value="#{msg.peopleList}" />
         <h:body>
             <h:dataTable id="tablePeopleList" value="#{peopleListBean.getPeopleList()}" var="person" border="1">
                 <h:column>
@@ -17,7 +17,7 @@
                 </h:column>    
             </h:dataTable>
             <h:form>
-            <h:commandLink action="Formulaire.xhtml" value="Ajout Person"></h:commandLink>
+            <h:commandLink action="Formulaire.xhtml" value="#{msg.addPerson}"></h:commandLink>
             </h:form>
         </h:body>
     </h:body>

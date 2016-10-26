@@ -4,42 +4,42 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Form Person</title>
+        <title>#{msg.titleForm}</title>
     </h:head>
 
     <h:body>
-        <h:outputText value="Welcome this our form for new People" />
+        <h:outputText value="#{msg.greetings}" />
         <br /><br />
 
         <h:form id="formPerson">
 
-            <h:outputText value="firstName" />
+            <h:outputText value="#{msg.firstName} " />
             <h:inputText value="#{peopleAdd.firstName}" />
             <br /><br /> 
 
-            <h:outputText value="lastName" />
+            <h:outputText value="#{msg.lastName} " />
             <h:inputText value="#{peopleAdd.lastName}" />
             <br /><br /> 
 
-            <h:outputText value="gender" />
+            <h:outputText value="#{msg.gender} " />
             <h:selectOneRadio value="#{peopleAdd.gender}">
-                <f:selectItem itemValue="Male" itemLabel="Male" />
-                <f:selectItem itemValue="Female" itemLabel="Female" />	   			
+                <f:selectItem itemValue="Male" itemLabel="#{msg.genderMale}" />
+                <f:selectItem itemValue="Female" itemLabel="#{msg.genderFemal}" />	   			
             </h:selectOneRadio>
             <br /><br /> 
 
-            <h:outputText value="married" />
+            <h:outputText value="#{msg.married} ? " />
             <h:selectBooleanCheckbox value="#{peopleAdd.married}" />
             <br /><br /> 
 
-            <h:outputText value="birthDate" />
+            <h:outputText value="#{msg.birthDate} " />
             <h:inputText id="date" value="#{peopleAdd.birthDate}">
                 <f:convertDateTime pattern="dd.mm.yyyy" />
             </h:inputText>
             <br /><br /> 
 
-            <h:commandButton value="Ajouter" action="#{peopleAdd.addPerson()}" />
-            <h:commandLink action="ListPeople.xhtml" value="List People"></h:commandLink>
+            <h:commandButton value="#{msg.addPerson}" action="#{peopleAdd.addPerson()}" />
+            <h:commandLink action="ListPeople.xhtml" value="#{msg.backPeopleList}"></h:commandLink>
         </h:form>
     </h:body>
 </html>
